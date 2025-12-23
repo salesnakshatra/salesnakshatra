@@ -1,149 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nakshatra Cable Harnessing</title>
-  <meta name="description" content="Custom cable harnessing and wiring solutions for automotive, industrial, and electronic applications." />
+
+  <meta name="description"
+    content="Custom cable harnessing and wiring solutions for automotive, industrial, aerospace, and electronic applications." />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
+    :root {
+      --primary: #0b3c5d;
+      --secondary: #092f47;
+      --accent: #f0f6fb;
+      --text-dark: #2c2c2c;
+      --text-light: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-      color: #333;
+      font-family: "Inter", Arial, sans-serif;
+      line-height: 1.7;
+      color: var(--text-dark);
+      background: #ffffff;
     }
+
+    /* ---------- Header ---------- */
     header {
-      background: #0b3c5d;
-      color: #fff;
-      padding: 2rem 1rem;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: var(--text-light);
+      padding: 4rem 1.5rem;
       text-align: center;
     }
-    header h1 { margin: 0; }
-    nav {
-      background: #092f47;
-      padding: 0.5rem 1rem;
-      text-align: center;
+
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 1px;
     }
-    nav a {
-      color: #fff;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover { text-decoration: underline; }
-    section {
-      padding: 2rem 1.5rem;
-      max-width: 1100px;
+
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 700px;
       margin: auto;
     }
-    .services, .industries {
+
+    /* ---------- Navigation ---------- */
+    nav {
+      background: var(--secondary);
+      padding: 0.8rem 1rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav a {
+      color: var(--text-light);
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* ---------- Sections ---------- */
+    section {
+      padding: 4rem 1.5rem;
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: var(--primary);
+    }
+
+    section p {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+
+    /* ---------- Cards ---------- */
+    .services,
+    .industries {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
+      gap: 2rem;
+      margin-top: 3rem;
     }
+
     .card {
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 1.5rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 2rem;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .card h3 { margin-top: 0; }
-    footer {
-      background: #0b3c5d;
-      color: #fff;
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.12);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 0.8rem;
+      color: var(--primary);
+      font-size: 1.2rem;
+    }
+
+    .industries .card {
       text-align: center;
-      padding: 1rem;
+      font-weight: 600;
+      font-size: 1.05rem;
     }
+
+    /* ---------- CTA ---------- */
     .cta {
-      background: #f4f8fb;
+      background: var(--accent);
       text-align: center;
-      padding: 2.5rem 1.5rem;
+      padding: 4rem 1.5rem;
+      margin-top: 2rem;
     }
+
+    .cta h2 {
+      margin-bottom: 1rem;
+    }
+
     .cta a {
       display: inline-block;
-      margin-top: 1rem;
-      background: #0b3c5d;
-      color: #fff;
-      padding: 0.75rem 1.5rem;
-      border-radius: 5px;
+      margin-top: 1.5rem;
+      background: var(--primary);
+      color: var(--text-light);
+      padding: 0.9rem 2rem;
+      border-radius: 30px;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: background 0.3s ease, transform 0.3s ease;
     }
-    .cta a:hover { background: #092f47; }
+
+    .cta a:hover {
+      background: var(--secondary);
+      transform: translateY(-2px);
+    }
+
+    /* ---------- Contact ---------- */
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .contact-info {
+      text-align: left;
+    }
+
+    .map iframe {
+      width: 100%;
+      height: 300px;
+      border-radius: 12px;
+      border: 0;
+    }
+
+    @media (max-width: 768px) {
+      .contact-wrapper {
+        grid-template-columns: 1fr;
+      }
+    }
+
+
+    /* ---------- Footer ---------- */
+    footer {
+      background: var(--primary);
+      color: var(--text-light);
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    footer p {
+      margin: 0;
+      opacity: 0.9;
+    }
   </style>
 </head>
+
 <body>
 
-<header>
-  <h1>Precision Cable Harnessing</h1>
-  <p>Reliable. Scalable. Custom Wiring Solutions.</p>
-</header>
+  <header>
+    <h1>Nakshatra Cable Harnessing</h1>
+    <p>Reliable, scalable and precision-engineered cable harness & wiring solutions</p>
+  </header>
 
-<nav>
-  <a href="#about">About</a>
-  <a href="#services">Services</a>
-  <a href="#industries">Industries</a>
-  <a href="#contact">Contact</a>
-</nav>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#industries">Industries</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-<section id="about">
-  <h2>About Us</h2>
-  <p>
-    We are pleased to introduce Nakshatra Cable Harnessing, a dedicated manufacturer of high-reliability cable harnesses and Unit wiring assemblies
-    for Defence, Aerospace, Automotive, Medical, Fiber Optics Cable, RF Cable, PCB Embedded, 
-    Mechanical Enclosure and Electrical applications. Our operations are driven by process discipline, technical precision, and a strong commitment to quality.
-  </p>
-</section>
+  <section id="about">
+    <h2>About Us</h2>
+    <p>
+      Nakshatra Cable Harnessing is a dedicated manufacturer of high-reliability cable harnesses and unit wiring
+      assemblies
+      for Defence, Aerospace, Automotive, Medical, Fiber Optics, RF, PCB-embedded and Electrical applications.
+      Our operations are driven by process discipline, engineering precision, and an uncompromising commitment to
+      quality.
+    </p>
+  </section>
 
-<section id="services">
-  <h2>Our Services</h2>
-  <div class="services">
-    <div class="card">
-      <h3>Custom Cable Harnesses</h3>
-      <p> Precision manufacturing of wiring harnesses for defence, tactical equipment, communication systems, and ruggedised platforms.</p>
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="card">
+        <h3>Custom Cable Harnesses</h3>
+        <p>Precision-built wiring harnesses for defence systems, tactical equipment, communication platforms and rugged
+          environments.</p>
+      </div>
+      <div class="card">
+        <h3>Wiring Assemblies</h3>
+        <p>Low- and high-volume wiring assemblies manufactured under strict quality and inspection standards.</p>
+      </div>
+      <div class="card">
+        <h3>Precision Manufacturing</h3>
+        <p>High-accuracy assembly processes ensuring durability, consistency and long-term performance.</p>
+      </div>
+      <div class="card">
+        <h3>Value-Added Services</h3>
+        <p>Labeling, kitting, packaging, and coordination for over-molding and specialized requirements.</p>
+      </div>
     </div>
-    <div class="card">
-      <h3>Wiring Assemblies</h3>
-      <p>Low- and high-volume wiring assemblies with strict quality controls.</p>
+  </section>
+
+  <section id="industries">
+    <h2>Industries We Serve</h2>
+    <div class="industries">
+      <div class="card">Automotive & EV</div>
+      <div class="card">Industrial Automation</div>
+      <div class="card">Consumer Electronics</div>
+      <div class="card">Medical Devices</div>
+      <div class="card">Aerospace & Defense</div>
     </div>
-    <div class="card">
-      <h3>Precision Manufacturing</h3>
-      <p> Precision manufacturing of wiring harnesses for defence, tactical equipment, communication systems, and ruggedised platforms</p>
+  </section>
+
+  <section class="cta">
+    <h2>Looking for a Reliable Cable Harness Partner?</h2>
+    <p>Let’s discuss your technical and production requirements.</p>
+    <a href="#contact">Get in Touch</a>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+
+    <div class="contact-wrapper">
+      <div class="contact-info">
+        <p><strong>Email:</strong> sales1nakshatra@gmail.com</p>
+        <p><strong>Phone:</strong> +91-9964939090  , +91-9964812090</p>
+        <p><strong>GSTIN:</strong>29FYZPS3080J1Z9</p>
+        <p><strong>Address:</strong> #76,2nd Floor, 1st Main, 12th Cross, Rajagopal Nagar, Peenya 2nd Stage. Bangalore - 560058</p>
+        <p><strong>Location:</strong>Bengalure, Karnataka</p>
+      </div>
+
+      <div class="map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.2852649236747!2d77.51042107484223!3d13.01749738730214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3d002294d509%3A0x5be9d4c60dcce3c4!2sNakshatra%20Cable%20Harnessing!5e0!3m2!1sen!2sin!4v1766253043334!5m2!1sen!2sin"
+          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
     </div>
-    <div class="card">
-      <h3>Value-Added Services</h3>
-      <p>Labeling, overmolding coordination, kitting, and packaging.</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section id="industries">
-  <h2>Industries We Serve</h2>
-  <div class="industries">
-    <div class="card">Automotive & EV</div>
-    <div class="card">Industrial Automation</div>
-    <div class="card">Consumer Electronics</div>
-    <div class="card">Medical Devices</div>
-    <div class="card">Aerospace & Defense</div>
-  </div>
-</section>
-
-<section class="cta">
-  <h2>Looking for a Reliable Cable Harness Partner?</h2>
-  <p>Contact us to discuss your project requirements.</p>
-  <a href="#contact">Get in Touch</a>
-</section>
-
-<section id="contact">
-  <h2>Contact Us</h2>
-  <p>Email: <strong>sales1nakshatra@gmail.com</strong></p>
-  <p>Phone: <strong>+91-9964939090</strong></p>
-  <p>Location: India</p>
-</section>
-
-<footer>
-  <p>&copy; 2025 Precision Cable Harnessing. All rights reserved.</p>
-</footer>
+  <footer>
+    <p>&copy; 2025 Nakshatra Cable Harnessing. All rights reserved.</p>
+  </footer>
 
 </body>
+
 </html>
